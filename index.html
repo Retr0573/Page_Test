@@ -22,7 +22,7 @@
   <!-- Keywords for your paper to be indexed by-->
   <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  
 
   <title>Academic Project Page</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
@@ -43,6 +43,9 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
 </head>
 <body>
 
@@ -52,21 +55,23 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">SkillBench: A Hierarchical and Scalable Benchmark for Fine-grained
+              Compositional Text-to-Image Generation</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>1</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>1</sup>,</span>
                   <span class="author-block">
                     <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <!-- <span class="author-block">Institution Name<br>Conferance name and year</span> -->
+                    <span class="author-block"></a><sup>1</sup>HDU</span>
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
                   </div>
 
                   <div class="column has-text-centered">
@@ -124,11 +129,10 @@
 
 
 <!-- Teaser video-->
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
         <source src="static/videos/banner_video.mp4"
         type="video/mp4">
       </video>
@@ -137,7 +141,7 @@
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End teaser video -->
 
 <!-- Paper abstract -->
@@ -148,7 +152,16 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Despite significant advances in text-to-image (T2I) models, current approaches still struggle to effectively combine multiple concepts described by compositional textual prompts into a coherent scene. 
+            Developing benchmarks to systematically analyze the compositional capabilities of T2I models is challenging yet crucial. 
+            Existing benchmarks either lack comprehensive coverage of compositional skills or fail to provide fine-grained definitions of these skills, limiting the ability to conduct in-depth, multigranularity evaluations. 
+            To address these issues, we introduce \(\textbf{SkillBench}\), a hierarchical and scalable benchmark to evaluate compositional T2I generation. 
+            Specifically, we define compositional skills in a \(\textbf{fine-grained}\) and \(\textbf{hierarchical}\) manner. 
+            These skills are categorized into primitive skills and composite skills. 
+            Furthermore, each skill is evaluated across varying difficulty levels to evaluate how well T2I models generalize from simpler to more complex tasks. 
+            Additionally, we propose \(\textbf{FITScore}\), a Fine-grained, Interpretable, and Training-free evaluation framework tailored for compositional T2I generation. 
+            By integrating structured analysis with interpretability, FITScore facilitates automatic and transparent assessment of T2I alignment, enhancing adaptability to diverse scenarios and ensuring robust evaluation performance in open-world settings. 
+            Through an evaluation of nine recent large-scale T2I models, our analysis provides valuable insights into the strengths and limitations of current models when addressing fine-grained compositional skills.
           </p>
         </div>
       </div>
@@ -165,29 +178,31 @@
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
+        <img src="static/images/1_overview.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered" style="font-size: 16px;">
+          The detailed distribution of our SkillBench. Figure a illustrates the hierarchical structure and distribution of primitive skills
+across three aspects: object, attribute, and relationship. Figure b displays the hierarchical structure of composite skills. Figure c shows
+the distribution of difficulty levels for both primitive and composite skills.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
         <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle has-text-centered" style="font-size: 16px;">
           Second image description.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
         <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
+        <h2 class="subtitle has-text-centered" style="font-size: 16px;">
          Third image description.
        </h2>
      </div>
      <div class="item">
       <!-- Your image here -->
       <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
+      <h2 class="subtitle has-text-centered" style="font-size: 16px;">
         Fourth image description.
       </h2>
     </div>
