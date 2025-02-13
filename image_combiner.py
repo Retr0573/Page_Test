@@ -2,8 +2,8 @@ from PIL import Image, ImageDraw, ImageFont
 import os
 
 # Directory paths
-base_path = "static/images/for_show_single"
-output_base_path = "static/images/for_show_single_combined"
+base_path = "static/images/for_show_cross"
+output_base_path = "static/images/cross_combined"
 os.makedirs(output_base_path,  exist_ok=True)
 skill_dirs = os.listdir(base_path)
 
@@ -21,13 +21,14 @@ MODEL_DICT = {
     "sd35": "SD v3.5",
     "janus": "Janus Pro"
 }
+MODELS = ["mindalle", "sd21", "attend", "sdxl", "playground", "pix",
+          "sd3", "flux", "sd35", "janus"]
 
 
 def combine_images(skill_dir, id):
     skill_path = os.path.join(base_path, skill_dir)
     # Get all model subdirectories under the skill directory
-    model_dirs = [d for d in os.listdir(
-        skill_path) if os.path.isdir(os.path.join(skill_path, d))]
+    model_dirs = MODELS
     model_0 = model_dirs[0]
     # Read the description file (assuming it's named '1.txt')
     with open(os.path.join(skill_path, model_0, '1.txt'), 'r', encoding='utf-8') as f:
@@ -37,6 +38,8 @@ def combine_images(skill_dir, id):
     if description == "There is a curtain, a laptop, and a pair of eyeglasses. The curtain is positioned next to the laptop, while the laptop rests on top of the eyeglasses.":
         description = "The curtain is positioned next to the laptop, while the laptop rests on top of the eyeglasses."
     description = description.capitalize()
+    if description[-1] != ".":
+        description += "."
 
     images = []
     model_names = []
@@ -89,10 +92,10 @@ def combine_images(skill_dir, id):
 
     # 保存合并后的图片
     output_path = os.path.join(
-        output_base_path, f"6_{id+9}_{skill_dir}_combined.png")
+        output_base_path, f"6_{id}_{skill_dir}_combined.png")
     new_img.save(output_path)
 
 
 # 处理每个技能目录
-for id, skill_dir in enumerate(skill_dirs):
+for id, skill_dir in enumerate(sorted(skill_dirs)):
     combine_images(skill_dir, id)
